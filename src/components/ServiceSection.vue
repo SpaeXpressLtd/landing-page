@@ -31,53 +31,91 @@ export default {
 
 <style scoped>
 .services {
-  padding: 4rem 0;
-  background-color: #f9f9f9;
+  padding: 5rem 0;
+  background-color: var(--background-color);
+  position: relative;
 }
 
 .section-title {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-headings);
   font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
+  margin-bottom: 3rem;
+  color: var(--text-color);
 }
 
 .service-cards {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
   text-align: center;
-  max-width: 300px;
-  transition: transform 0.3s;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
 }
 
 .card:hover {
   transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
 }
 
 .card i {
-  font-size: 3rem;
-  color: #007BFF;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.card:hover i {
+  transform: scale(1.1);
+  color: var(--secondary-color);
 }
 
 .card h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-headings);
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: var(--text-color);
 }
 
 .card p {
-  font-family: 'Open Sans', sans-serif;
-  color: #555;
+  font-family: var(--font-family-body);
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 4rem 0;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

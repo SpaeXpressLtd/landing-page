@@ -36,16 +36,16 @@ export default {
 
 <style scoped>
 .how-it-works {
-  padding: 4rem 0;
-  background-color: #fff;
+  padding: 5rem 0;
+  background-color: var(--white);
 }
 
 .section-title {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-headings);
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #333;
+  color: var(--text-color);
 }
 
 .timeline {
@@ -53,6 +53,8 @@ export default {
   justify-content: center;
   gap: 2rem;
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .timeline::before {
@@ -62,7 +64,7 @@ export default {
   left: 10%;
   right: 10%;
   height: 4px;
-  background-color: #007BFF;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   z-index: 0;
 }
 
@@ -71,11 +73,17 @@ export default {
   max-width: 250px;
   position: relative;
   z-index: 1;
+  padding: 1rem;
+  transition: var(--transition);
+}
+
+.timeline-item:hover {
+  transform: translateY(-10px);
 }
 
 .timeline-icon {
-  background-color: #007BFF;
-  color: #fff;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: var(--white);
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -83,20 +91,35 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
+  font-family: var(--font-family-headings);
+  font-weight: 700;
   margin: 0 auto 1rem;
-  border: 4px solid #fff;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-icon {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .timeline-item h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-headings);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  color: var(--text-color);
 }
 
 .timeline-item p {
-  font-family: 'Open Sans', sans-serif;
-  color: #555;
+  font-family: var(--font-family-body);
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 4rem 0;
+  }
 }
 </style>

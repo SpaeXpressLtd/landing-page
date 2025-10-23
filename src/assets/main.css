@@ -1,5 +1,16 @@
 @import './brands/theming.css';
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font-family-body);
@@ -7,7 +18,9 @@ body {
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #app {
@@ -20,7 +33,7 @@ body {
 a {
   text-decoration: none;
   color: var(--primary-color);
-  transition: color 0.3s;
+  transition: var(--transition);
 }
 
 a:hover {
@@ -33,10 +46,29 @@ a:hover {
   padding: 0 1rem;
 }
 
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-family-headings);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .header .container {
-    flex-direction: row; /* Revert to row for hamburger menu */
+    flex-direction: row;
     justify-content: space-between;
   }
 
@@ -53,5 +85,9 @@ a:hover {
   .about-content {
     flex-direction: column;
     text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 }
