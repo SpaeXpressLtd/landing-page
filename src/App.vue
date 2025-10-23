@@ -1,47 +1,40 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div id="app">
+    <PageHeader />
+    <main>
+      <ServiceSection />
+      <HowItWorks />
+      <AboutUs />
+      <ContactForm />
+    </main>
+    <PageFooter />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import PageHeader from './components/PageHeader.vue';
+import ServiceSection from './components/ServiceSection.vue';
+import HowItWorks from './components/HowItWorks.vue';
+import AboutUs from './components/AboutUs.vue';
+import ContactForm from './components/ContactForm.vue';
+import PageFooter from './components/PageFooter.vue';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+export default {
+  name: 'App',
+  components: {
+    PageHeader,
+    ServiceSection,
+    HowItWorks,
+    AboutUs,
+    ContactForm,
+    PageFooter,
+  },
+};
+</script>
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+<style>
+/* Global styles are in assets/main.css */
+main {
+  padding-top: 80px; /* Offset for the fixed header */
 }
 </style>
