@@ -36,14 +36,4 @@ jobs:
         with:
           node-version: 22.19.0
           cache: "npm"
-      - run: npm ci
-      - run: npm run build --if-present
-      - uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload the dist directory
-          path: "./dist"
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - run: ./deply.sh
