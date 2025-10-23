@@ -93,4 +93,12 @@ export default {
   border-top: 1px solid #555;
   padding-top: 1rem;
 }
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
 </style>

@@ -8,7 +8,7 @@
           <p>Our team is committed to excellence, ensuring that your packages are handled with the utmost care and delivered on time. We believe in building trust with our customers, one shipment at a time.</p>
         </div>
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1586528116311-06924151d18a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Shipping containers">
+          <img src="https://i.ibb.co/b3225b1/about-us.png" alt="Shipping containers">
         </div>
       </div>
     </div>
