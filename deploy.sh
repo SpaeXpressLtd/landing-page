@@ -6,14 +6,11 @@ set -e
 # build
 npm run build
 
-# navigate into the build output directory
-cd dist
-
 # if you are deploying to a custom domain
-echo 'www.spae.express' >CNAME
+echo 'www.spae.express' >./dist/CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
-cd -
+gh-pages -d ./dist
