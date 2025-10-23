@@ -38,7 +38,6 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run build --if-present
-      - name: configure github page
       - uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
