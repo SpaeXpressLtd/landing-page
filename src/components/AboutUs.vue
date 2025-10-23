@@ -7,9 +7,6 @@
           <p>SpaeXpress Ltd. was founded with a simple mission: to bridge the distance between Nigeria and the rest of the world. We are dedicated to providing reliable, affordable, and hassle-free shipping solutions. Our unique "buy and ship" service takes the stress out of shopping, allowing you to get the items you want, no matter where you are.</p>
           <p>Our team is committed to excellence, ensuring that your packages are handled with the utmost care and delivered on time. We believe in building trust with our customers, one shipment at a time.</p>
         </div>
-        <div class="about-image">
-          <img src="https://i.ibb.co/b3225b1/about-us.png" alt="Shipping containers">
-        </div>
       </div>
     </div>
   </section>
@@ -35,12 +32,13 @@ export default {
 
 .about-content {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 3rem;
+  text-align: center;
 }
 
 .about-text {
-  flex: 1;
+  max-width: 800px;
 }
 
 .section-title {
@@ -55,15 +53,5 @@ export default {
   color: #555;
   line-height: 1.6;
   margin-bottom: 1rem;
-}
-
-.about-image {
-  flex: 1;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
 }
 </style>
